@@ -84,6 +84,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |
           brew install lua@5.4 pkg-config
+          echo "PKG_CONFIG_PATH=$(brew --prefix lua@5.4)/lib/pkgconfig" >> "$GITHUB_ENV"
 
       - uses: dtolnay/rust-toolchain@stable
         with:

@@ -47,6 +47,8 @@ Not supported on Steam builds due to dynamic library issues. Running the Windows
 
 To build the project, run the `tools/build.py` Python script.
 
+On macOS, you'll need to set up pkg-config: `PKG_CONFIG_PATH="$(brew --prefix lua@5.4)/lib/pkgconfig" python tools/build.py`
+
 ### Releasing
 
 Push a git tag like `v1.0.8`, after changing the Cargo.toml and package.json files.
