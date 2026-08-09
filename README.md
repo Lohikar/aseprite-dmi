@@ -42,8 +42,10 @@ Not supported on Steam builds due to dynamic library issues. Running the Windows
 
 -	[Rust](https://www.rust-lang.org/)
 -	[Python](https://www.python.org/)
+-	Linux (Debian/Ubuntu): `sudo apt install liblua5.4-dev pkg-config`
+-	macOS (Homebrew): `brew install lua@5.4 pkg-config`
 
-To build the project, run `tools/build.py` Python script.
+To build the project, run the `tools/build.py` Python script.
 
 ### Releasing
 

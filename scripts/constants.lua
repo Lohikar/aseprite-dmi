@@ -3,8 +3,10 @@
 DIRECTION_NAMES = { "South", "North", "East", "West", "Southeast", "Southwest", "Northeast", "Northwest" }
 DIALOG_NAME = "DMI Editor"
 TEMP_NAME = "aseprite-dmi"
-LUA_LIB = app.fs.pathSeparator ~= "/" and "lua54" or nil
-DMI_LIB = app.fs.pathSeparator ~= "/" and "dmi" or "libdmi"
+LUA_LIB = app.fs.pathSeparator ~= "/" and "lua54.dll" or nil -- Handled by linker on posix
+DMI_LIB = app.fs.pathSeparator ~= "/" and "dmi.dll"
+	 or package.cpath:find("%.dylib") and "libdmi.dylib"
+	 or "libdmi.so"
 TEMP_DIR = app.fs.joinPath(app.fs.tempPath, TEMP_NAME)
 
 COMMON_STATE = {
